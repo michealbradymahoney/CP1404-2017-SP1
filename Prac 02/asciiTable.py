@@ -8,8 +8,7 @@ LOWER = 33
 #
 # try:
 #     while True:
-#         number = int(input("Enter a number between %s and %s or any
-#letter to quit: " % (LOWER, UPPER)))
+#         number = int(input("Enter a number between %s and %s or any letter to quit: " % (LOWER, UPPER)))
 #         if LOWER <= number <= UPPER:
 #             print("The character for {} is {}".format(number, chr(number)))
 #         else:
