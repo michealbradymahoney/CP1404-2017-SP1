@@ -1,8 +1,17 @@
 __author__ = 'Micheal Brady-Mahoney'
 
-# lower = input("Enter a lower number: ")
-# upper = input("Enter an upper number: ")
-# print("Enter a number (" + str.format(lower) + "-" + str.format(upper) + "):")
+UPPER = 127
+LOWER = 33
 
-for i in range(33, 126, 1):
-    print("{:>3} {:<4}".format(i, chr(i)))
+character = str(input("Enter a character: "))
+print("The ASCII code for {} is {}".format(character, ord(character)))
+
+try:
+    while True:
+        number = int(input("Enter a number between %s and %s or any letter to quit: " % (LOWER, UPPER)))
+        if LOWER <= number <= UPPER:
+            print("The character for {} is {}".format(number, chr(number)))
+        else:
+            print("Error - Number must be between %s and %s " % (LOWER, UPPER))
+except ValueError:
+    print("Goodbye")
