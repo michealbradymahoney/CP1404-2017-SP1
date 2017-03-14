@@ -20,7 +20,7 @@ DAYS = 0
 price = INITIAL_PRICE
 print("Starting price: ${:,.2f}".format(price))
 
-while price >= MIN_PRICE and price <= MAX_PRICE:
+while MIN_PRICE <= price <= MAX_PRICE:
     price_change = 0
     # generate a random integer of 1 or 2
     # if it's 1, the price increases, otherwise it decreases
@@ -28,12 +28,12 @@ while price >= MIN_PRICE and price <= MAX_PRICE:
         # generate a random floating-point number
         # between 0 and MAX_INCREASE
         price_change = random.uniform(0, MAX_INCREASE)
-        DAYS = DAYS + 1
+        DAYS += 1
     else:
         # generate a random floating-point number
         # between negative MAX_INCREASE and 0
         price_change = random.uniform(-MAX_DECREASE, 0)
-        DAYS = DAYS + 1
+        DAYS += 1
 
     price *= (1 + price_change)
     print("On day " + str(DAYS) + " price is ${:,.2f}".format(price))
