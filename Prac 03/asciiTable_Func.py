@@ -9,7 +9,7 @@ __author__ = 'Micheal Brady-Mahoney'
 
 def get_lower_upper():
     lower = int(input("Enter a lower number between 33 and 127:"))
-    while lower < 33:
+    while lower < 33 or lower > 127:
         print("Please enter a valid number!")
         lower = int(input("Enter a lower number between 33 and 127:"))
     upper = int(input("Enter an upper number between {} and 127:".format(lower)))
@@ -18,18 +18,17 @@ def get_lower_upper():
         upper = int(input("Enter an upper number between {} and 127:".format(lower)))
     return lower, upper
 
-try:
-    while True:
-        a, b = get_lower_upper()
-        number = int(input("Enter a number between %s and %s or any letter to quit: " % (a, b)))
-        if a <= number <= b:
-            print("The character for {} is {}".format(number, chr(number)))
-        else:
-            print("Error - Number must be between %s and %s " % (LOWER, UPPER))
-        break
-except ValueError:
-    print("Goodbye")
 
+def main():
+    min_num, max_num = get_lower_upper()
+    number = int(input("Enter a number between %s and %s or any letter to quit: " % (min_num, max_num)))
+    while number < min_num or number > max_num:
+        print("Error - Number must be between %s and %s " % (min_num, max_num))
+        number = int(input("Enter a number between %s and %s or any letter to quit: " % (min_num, max_num)))
+    print("The character for {} is {}".format(number, chr(number)))
+
+
+main()
 
 # try:
 #     while True:
