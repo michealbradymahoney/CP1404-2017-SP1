@@ -15,6 +15,8 @@ for kind in word_format:
 
 print(word)
 
+
+
 # OPTIONS = 'c' + 'v'
 # word_format = ""
 # word = ""
